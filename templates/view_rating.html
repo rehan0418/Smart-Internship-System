@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Rating</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Student Ratings</h1>
+
+<table border="1" width="100%">
+
+<tr>
+<th>Name</th>
+<th>Rating</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+<td>{{ s[1] }}</td>
+<td>{{ s[6] }}/5</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
