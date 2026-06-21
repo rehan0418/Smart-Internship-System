@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mentor Feedback</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Mentor Feedback</h1>
+
+<form action="/save_feedback" method="POST">
+
+<input type="text"
+name="student_name"
+placeholder="Student Name"
+required>
+
+<textarea
+name="feedback"
+rows="5"
+placeholder="Enter Feedback"
+required></textarea>
+
+<br><br>
+
+<button type="submit">
+Save Feedback
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

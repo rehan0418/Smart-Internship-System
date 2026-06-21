@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress Tracker</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Internship Progress Tracker</h1>
+
+<h3>Student: Rehan</h3>
+
+<p>Tasks Completed: {{ tasks }}/20</p>
+<p>Attendance: {{ attendance }}%</p>
+<p>Rating: {{ rating }}/5</p>
+
+<progress value="{{ progress }}" max="100"
+style="width:100%;height:30px;"></progress>
+
+<h2>{{ progress }}% Completed</h2>
+
+</div>
+
+</body>
+</html>

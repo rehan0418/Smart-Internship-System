@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Attendance</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Location Based Attendance</h1>
+
+<form action="/mark_location_attendance"
+method="POST">
+
+<input type="text"
+name="student_name"
+placeholder="Student Name"
+required>
+
+<br><br>
+
+<input type="hidden"
+id="latitude"
+name="latitude">
+
+<input type="hidden"
+id="longitude"
+name="longitude">
+
+<button type="button"
+onclick="getLocation()">
+Get Location
+</button>
+
+<br><br>
+
+<button type="submit">
+Mark Attendance
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+function getLocation() {
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(
+
+            function(position) {
+
+                document.getElementById("latitude").value =
+                position.coords.latitude;
+
+                document.getElementById("longitude").value =
+                position.coords.longitude;
+
+                alert(
+                    "Location Captured\n\nLatitude: "
+                    + position.coords.latitude +
+                    "\nLongitude: "
+                    + position.coords.longitude
+                );
+            },
+
+            function(error) {
+                alert("Location Error: " + error.message);
+            }
+
+        );
+
+    } else {
+
+        alert("Geolocation is not supported.");
+
+    }
+}
+
+</script>
+
+</body>
+</html>

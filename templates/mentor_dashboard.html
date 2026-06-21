@@ -1,57 +1,88 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-<title>Mentor Dashboard</title>
+    <title>Mentor Dashboard</title>
+
 
 <link rel="stylesheet"
 href="{{ url_for('static', filename='style.css') }}">
+
+
 </head>
 
 <body>
 
 <div class="container">
+     <div class="logout-container">
+        <a href="/logout">
+            <button class="logout-btn">🚪 Logout</button>
+        </a>
+    </div>
 
-<h1>Mentor Dashboard</h1>
 
-<a href="/register">
-<button>Register Student</button>
-</a>
+<h1>👨‍🏫 Mentor Dashboard</h1>
 
-<br><br>
+<div class="dashboard">
 
-<a href="/attendance">
-<button>Update Attendance</button>
-</a>
+    <a href="/register">
+        <button>👨‍🎓 Register Student</button>
+    </a>
 
-<br><br>
+    <a href="/students">
+        <button>📋 View All Students</button>
+    </a>
 
-<a href="/rating">
-<button>Update Rating</button>
-</a>
+    <a href="/attendance">
+        <button>📍 Update Attendance</button>
+    </a>
 
-<br><br>
+    <a href="/rating">
+        <button>⭐ Update Rating</button>
+    </a>
 
-<a href="/students">
-<button>View All Students</button>
-</a>
+    <a href="/mentor_tasks">
+        <button>✅ Approve Tasks</button>
+    </a>
 
-<br><br>
+    <a href="/feedback">
+        <button>💬 Give Feedback</button>
+    </a>
 
-<a href="/ranking">
-<button>Student Ranking</button>
-</a>
+    <a href="/ranking">
+        <button>🏆 Student Ranking</button>
+    </a>
 
-<br><br>
+    <a href="/analytics">
+        <button>📊 Analytics Dashboard</button>
+    </a>
 
-<a href="/report">
-<button>Generate Reports</button>
-</a>
+    <a href="/view_location_attendance">
+        <button>📍 View Location Attendance</button>
+    </a>
 
-<br><br>
+    <a href="/view_selfie_attendance">
+        <button>📷 View Selfie Attendance</button>
+    </a>
 
-<a href="/certificate">
-<button>Certificate Eligibility</button>
-</a>
+    <a href="/view_uploaded_reports">
+        <button>📁 Uploaded Reports</button>
+    </a>
+
+    <a href="/report">
+        <button>📄 Generate Reports</button>
+    </a>
+
+    <a href="/certificate">
+        <button>🏅 Certificate Eligibility</button>
+    </a>
+
+    <a href="/certificate_form">
+        <button>📜 Generate Certificate</button>
+    </a>
+   
+</div>
+
 
 </div>
 

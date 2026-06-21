@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Approve Tasks</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>✅ Approve Tasks</h1>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Student</th>
+    <th>Task</th>
+    <th>Description</th>
+    <th>Status</th>
+</tr>
+
+{% for task in tasks %}
+
+<tr>
+    <td>{{ task[0] }}</td>
+    <td>{{ task[1] }}</td>
+    <td>{{ task[2] }}</td>
+    <td>{{ task[3] }}</td>
+    <td>{{ task[4] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

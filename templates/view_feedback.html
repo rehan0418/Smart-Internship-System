@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Feedback</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Student Feedback</h1>
+
+<table>
+
+<tr>
+<th>Student</th>
+<th>Feedback</th>
+</tr>
+
+{% for f in feedbacks %}
+
+<tr>
+<td>{{ f[1] }}</td>
+<td>{{ f[2] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

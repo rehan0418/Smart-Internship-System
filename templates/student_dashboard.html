@@ -1,45 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Student Dashboard</title>
+    <title>Student Dashboard</title>
+
 
 <link rel="stylesheet"
 href="{{ url_for('static', filename='style.css') }}">
+
+
 </head>
 
 <body>
 
 <div class="container">
+     <div class="logout-container">
+        <a href="/logout">
+            <button class="logout-btn">🚪 Logout</button>
+        </a>
+    </div>
 
-<h1>Student Dashboard</h1>
 
-<a href="/task">
-<button>Submit Daily Task</button>
-</a>
+<h1>🎓 Student Dashboard</h1>
 
-<br><br>
+<div class="dashboard">
 
-<a href="/tasks">
-<button>View My Tasks</button>
-</a>
+    <a href="/task">
+        <button>📝 Submit Daily Task</button>
+    </a>
 
-<br><br>
+    <a href="/tasks">
+        <button>📋 View My Tasks</button>
+    </a>
 
-<a href="/view_attendance">
-<button>View Attendance</button>
-</a>
+    <a href="/view_attendance">
+        <button>📍 View Attendance</button>
+    </a>
 
-<br><br>
+    <a href="/view_rating">
+        <button>⭐ View Rating</button>
+    </a>
 
-<a href="/view_rating">
-<button>View Rating</button>
-</a>
+    <a href="/certificate">
+        <button>🏅 Certificate Status</button>
+    </a>
 
-<br><br>
+    <a href="/progress">
+        <button>📈 Progress Tracker</button>
+    </a>
 
-<a href="/certificate">
-<button>Certificate Status</button>
-</a>
+    <a href="/view_feedback">
+        <button>💬 View Feedback</button>
+    </a>
+
+    <a href="/generate_certificate">
+        <button>📄 Download Certificate</button>
+    </a>
+
+    <a href="/analytics">
+        <button>📊 Analytics Dashboard</button>
+    </a>
+
+    <a href="/upload">
+        <button>📁 Upload Report</button>
+    </a>
+
+    <a href="/location_attendance">
+        <button>📍 Location Attendance</button>
+    </a>
+
+    <a href="/camera_attendance">
+        <button>📷 Selfie Attendance</button>
+    
+
+</div>
+
 
 </div>
 

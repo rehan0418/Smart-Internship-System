@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selfie Attendance</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📷 Selfie Attendance Records</h1>
+
+    <div class="dashboard">
+
+        {% for s in data %}
+
+        <div class="card">
+
+            <h3>👨‍🎓 {{ s[0] }}</h3>
+
+            <p>📅 {{ s[2] }}</p>
+
+            <img src="{{ url_for('static', filename=s[1].replace('static/', filename='selfies/photo.jpg')) }}"
+                 width="200"
+                 style="border-radius:10px; margin-top:10px;">
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

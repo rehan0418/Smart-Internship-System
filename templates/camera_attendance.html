@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selfie Attendance</title>
+</head>
+<body>
+
+<h1>Selfie Attendance</h1>
+
+<video id="video" width="400" height="300" autoplay></video>
+
+<br><br>
+
+<button onclick="capturePhoto()">
+Capture Photo
+</button>
+
+<canvas id="canvas"
+width="400"
+height="300"
+style="display:none;">
+</canvas>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="text" name="student_name" placeholder="Name" required>
+
+<input type="file" name="image" accept="image/*" required>
+
+<button type="submit">Upload Selfie</button>
+
+</form>
+
+<script>
+
+const video =
+document.getElementById("video");
+
+navigator.mediaDevices
+.getUserMedia({video:true})
+.then(function(stream){
+
+video.srcObject = stream;
+
+});
+
+function capturePhoto(){
+
+const canvas =
+document.getElementById("canvas");
+
+const context =
+canvas.getContext("2d");
+
+context.drawImage(
+video,
+0,
+0,
+400,
+300
+);
+
+const imageData =
+canvas.toDataURL("image/png");
+
+document.getElementById("photo").value =
+imageData;
+
+alert("Photo Captured Successfully");
+
+}
+
+</script>
+
+</body>
+</html>
