@@ -44,7 +44,6 @@ def dashboard():
 def register():
     return render_template("register.html")
 
-
 @app.route('/save_student', methods=['POST'])
 def save_student():
 
@@ -64,7 +63,7 @@ def save_student():
     conn.commit()
     conn.close()
 
-    return redirect('/dashboard')
+    return redirect('/students')
 
 
 # -----------------------
@@ -341,20 +340,21 @@ def view_rating():
 @app.route('/progress')
 def progress():
 
-    tasks = 15
-    attendance = 85
-    rating = 4
+    conn = sqlite3.connect("internship.db")
+    cursor = conn.cursor()
 
-    progress_percent = int(
-        (attendance + (rating*20)) / 2
-    )
+    cursor.execute("""
+    SELECT name, attendance, rating
+    FROM students
+    """)
+
+    students = cursor.fetchall()
+
+    conn.close()
 
     return render_template(
         "progress.html",
-        tasks=tasks,
-        attendance=attendance,
-        rating=rating,
-        progress=progress_percent
+        students=students
     )
 @app.route('/feedback')
 def feedback():
@@ -555,7 +555,10 @@ def view_location_attendance():
 
     conn.close()
 
-    return str(data)
+    return render_template(
+        "view_location_attendance.html",
+        attendance=data
+    )
 @app.route('/mark_location_attendance', methods=['POST'])
 def mark_location_attendance():
 
@@ -651,37 +654,76 @@ def analytics():
 
 @app.route('/view_uploaded_reports')
 def view_uploaded_reports():
- return "Uploaded Reports"
-import os
-from flask import request, redirect
 
-UPLOAD_FOLDER = "static/selfies"
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+    files = os.listdir("uploads")
+
+    return render_template(
+        "view_uploaded_reports.html",
+        files=files
+    )
+from flask import send_from_directory
+
+@app.route('/download_report/<filename>')
+def download_report(filename):
+
+    return send_from_directory(
+        "uploads",
+        filename,
+        as_attachment=False
+    )
 
 @app.route('/camera_attendance', methods=['GET', 'POST'])
 def camera_attendance():
 
     if request.method == 'POST':
-        student_name = request.form['student_name']
-        image = request.files['image']
 
-        filepath = os.path.join(UPLOAD_FOLDER, image.filename)
-        image.save(filepath)
+        student_name = request.form['student_name']
+        photo_data = request.form.get('photo')
+
+        if not photo_data:
+            return render_template("error.html")
+        photo_data = photo_data.split(',')[1]
+
+        image = base64.b64decode(photo_data)
+
+        os.makedirs(
+            "static/selfies",
+            exist_ok=True
+        )
+
+        filename = (
+            str(int(time.time()))
+            + ".png"
+        )
+
+        filepath = os.path.join(
+            "static/selfies",
+            filename
+        )
+
+        with open(filepath, "wb") as f:
+            f.write(image)
 
         conn = sqlite3.connect("internship.db")
         cursor = conn.cursor()
 
         cursor.execute("""
-        INSERT INTO selfie_attendance (student_name, image_path)
+        INSERT INTO selfie_attendance
+        (student_name, image_path)
         VALUES (?, ?)
-        """, (student_name, filepath))
+        """, (student_name, filename))
 
         conn.commit()
         conn.close()
 
-        return "Selfie Attendance Marked Successfully"
+        return render_template(
+            "success.html",
+            message="📷 Selfie Attendance Marked Successfully"
+        )
 
-    return render_template("camera_attendance.html")
+    return render_template(
+        "camera_attendance.html"
+    )
 @app.route('/view_selfie_attendance')
 def view_selfie_attendance():
 
@@ -690,6 +732,8 @@ def view_selfie_attendance():
 
     cursor.execute("SELECT student_name, image_path, date FROM selfie_attendance")
     data = cursor.fetchall()
+
+    print(data)
 
     conn.close()
 

@@ -5,13 +5,13 @@
 </head>
 <body>
 
-<h1>Selfie Attendance</h1>
+<h1>📷 Selfie Attendance</h1>
 
 <video id="video" width="400" height="300" autoplay></video>
 
 <br><br>
 
-<button onclick="capturePhoto()">
+<button type="button" onclick="capturePhoto()">
 Capture Photo
 </button>
 
@@ -21,53 +21,60 @@ height="300"
 style="display:none;">
 </canvas>
 
-<form method="POST" enctype="multipart/form-data">
+<form method="POST">
 
-<input type="text" name="student_name" placeholder="Name" required>
+<br>
 
-<input type="file" name="image" accept="image/*" required>
+<input type="text"
+name="student_name"
+placeholder="Student Name"
+required>
 
-<button type="submit">Upload Selfie</button>
+<input type="hidden"
+id="photo"
+name="photo">
+
+<br><br>
+
+<button type="submit">
+Mark Attendance
+</button>
 
 </form>
 
 <script>
 
-const video =
-document.getElementById("video");
+const video = document.getElementById("video");
 
 navigator.mediaDevices
 .getUserMedia({video:true})
 .then(function(stream){
-
-video.srcObject = stream;
-
+    video.srcObject = stream;
 });
 
 function capturePhoto(){
 
-const canvas =
-document.getElementById("canvas");
+    const canvas =
+    document.getElementById("canvas");
 
-const context =
-canvas.getContext("2d");
+    const context =
+    canvas.getContext("2d");
 
-context.drawImage(
-video,
-0,
-0,
-400,
-300
-);
+    context.drawImage(
+        video,
+        0,
+        0,
+        400,
+        300
+    );
 
-const imageData =
-canvas.toDataURL("image/png");
+    const imageData =
+    canvas.toDataURL("image/png");
 
-document.getElementById("photo").value =
-imageData;
+    document.getElementById("photo").value =
+    imageData;
 
-alert("Photo Captured Successfully");
-
+    alert("✅ Photo Captured Successfully");
 }
 
 </script>

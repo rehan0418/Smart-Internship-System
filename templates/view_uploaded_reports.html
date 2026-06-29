@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uploaded Reports</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>📁 Uploaded Reports</h1>
+
+<table>
+
+<tr>
+    <th>Report Name</th>
+</tr>
+
+{% for file in files %}
+<tr>
+    <td>
+        <a href="/download_report/{{ file }}" target="_blank">
+            📄 {{ file }}
+        </a>
+    </td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/mentor_dashboard">
+    <button>⬅ Back to Dashboard</button>
+</a>
+
+</div>
+
+</body>
+</html>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Progress Tracker</title>
+    <title>Certificate Status</title>
+
     <link rel="stylesheet"
     href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -10,29 +11,31 @@
 
 <div class="container">
 
-<h1>📈 Internship Progress Tracker</h1>
+<h1>🏅 Certificate Eligibility</h1>
 
-<table border="1" width="100%">
+<table>
 
 <tr>
     <th>Name</th>
     <th>Attendance</th>
     <th>Rating</th>
-    <th>Progress</th>
+    <th>Status</th>
 </tr>
 
 {% for s in students %}
 
 <tr>
+    <td>{{ s[1] }}</td>
+    <td>{{ s[4] }}</td>
+    <td>{{ s[5] }}</td>
 
-<td>{{ s[0] }}</td>
-
-<td>{{ s[1] }}%</td>
-
-<td>{{ s[2] }}/5</td>
-
-<td>{{ ((s[1] + (s[2]*20))/2)|int }}%</td>
-
+    <td>
+        {% if s[4] >= 75 %}
+            Eligible
+        {% else %}
+            Not Eligible
+        {% endif %}
+    </td>
 </tr>
 
 {% endfor %}

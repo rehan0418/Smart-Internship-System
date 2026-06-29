@@ -11,7 +11,7 @@ href="{{ url_for('static', filename='style.css') }}">
 
 <div class="container">
 
-<h1>Daily Task Submission</h1>
+<h1>📝 Daily Task Submission</h1>
 
 <form action="/save_task" method="POST">
 
@@ -32,10 +32,13 @@ style="width:100%;"
 placeholder="Task Description">
 </textarea>
 
-<select name="status">
+<select name="status" required>
 
-<option>Completed</option>
-<option>Pending</option>
+    <option value="Pending">⏳ Pending</option>
+
+    <option value="In Progress">🔄 In Progress</option>
+
+    <option value="Completed">✅ Completed</option>
 
 </select>
 
