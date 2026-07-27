@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>Upload Report</title>
 
 <link rel="stylesheet"
 href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>📁 Upload Daily Report</h1>
+<h1>📁 Upload Internship Report</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
 
-<form action="/upload_file"
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Upload your daily or weekly internship report in PDF, Word, or other supported formats.
+</p>
+
+<form
+action="/upload_file"
 method="POST"
 enctype="multipart/form-data">
 
-<input type="file"
+<label style="color:white;font-size:18px;">
+📄 Choose Report File
+</label>
+
+<input
+type="file"
 name="file"
 required>
 
-<br><br>
-
 <button type="submit">
-Upload
+
+📤 Upload Report
+
 </button>
 
 </form>
 
+<br>
+
+<a href="/student_dashboard">
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
+</a>
+
 </div>
 
 </body>
+
 </html>

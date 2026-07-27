@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Rating</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+
+<title>Student Rating</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
 <div class="container">
 
-<h1>⭐ Student Ratings</h1>
+<h1>⭐ Performance Ratings</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
 
-<table border="1" width="100%">
+<p style="text-align:center;color:white;margin-bottom:25px;">
+View student performance ratings.
+</p>
+
+<table>
 
 <tr>
-<th>Name</th>
+
+<th>Student</th>
 <th>Rating</th>
+
 </tr>
 
 {% for s in students %}
 
 <tr>
+
 <td>{{ s[1] }}</td>
-<td>{{ s[6] }}/5</td>
+
+<td>
+
+⭐ {{ s[6] }}/5
+
+</td>
+
 </tr>
 
 {% endfor %}

@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Generate Certificate</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+
+<title>Generate Certificate</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🏅 Generate Certificate</h1>
+<h1>📜 Generate Internship Certificate</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Select a student to generate the internship completion certificate.
+</p>
 
 <form action="/generate_certificate" method="POST">
 
-<select name="student_name" required>
+<label style="color:white;font-size:18px;">
+👨‍🎓 Select Student
+</label>
+
+<select
+name="student_name"
+required>
 
 {% for student in students %}
 
 <option value="{{ student[1] }}">
-    {{ student[1] }}
+{{ student[1] }}
 </option>
 
 {% endfor %}
@@ -27,55 +42,27 @@
 </select>
 
 <button type="submit">
-Generate Certificate
+
+🏅 Generate Certificate
+
 </button>
 
 </form>
 
-</div>
+<br>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Generate Certificate</title>
+<a href="/mentor_dashboard">
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
-</head>
+<button>
 
-<body>
+⬅ Back to Dashboard
 
-<div class="container">
-
-<h1>🏅 Generate Certificate</h1>
-
-<form action="/generate_certificate" method="POST">
-
-<label>Select Student</label>
-
-<select name="student_name" required>
-
-{% for student in students %}
-
-<option value="{{ student[1] }}">
-    {{ student[1] }}
-</option>
-
-{% endfor %}
-
-</select>
-
-<br><br>
-
-<button type="submit">
-Generate Certificate
 </button>
 
-</form>
+</a>
 
 </div>
 
 </body>
+
 </html>

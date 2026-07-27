@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Students</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+<title>All Students</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>👥 All Registered Students</h1>
+<h1>👨‍🎓 Registered Students</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
 
-<table border="1" width="100%">
+<p style="text-align:center;color:white;margin-bottom:25px;">
+List of all registered internship students.
+</p>
+
+<table>
 
 <tr>
 <th>ID</th>
@@ -35,7 +42,7 @@
 <td>{{ s[3] }}</td>
 <td>{{ s[4] }}</td>
 <td>{{ s[5] }}</td>
-<td>{{ s[6] }}</td>
+<td>⭐ {{ s[6] }}</td>
 
 </tr>
 

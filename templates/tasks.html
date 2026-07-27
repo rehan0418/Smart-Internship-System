@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Task Records</title>
+
+<title>Tasks</title>
 
 <link rel="stylesheet"
 href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>📋 Submitted Tasks</h1>
+<h1>📝 Submitted Tasks</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+View all submitted internship tasks.
+</p>
 
 <table>
 
 <tr>
-<th>ID</th>
+
 <th>Student</th>
-<th>Title</th>
+<th>Task</th>
+<th>Description</th>
 <th>Status</th>
+
 </tr>
 
-{% for task in tasks %}
+{% for t in tasks %}
 
 <tr>
-<td>{{ task[0] }}</td>
-<td>{{ task[1] }}</td>
-<td>{{ task[2] }}</td>
-<td>{{ task[4] }}</td>
+
+<td>{{ t[1] }}</td>
+<td>{{ t[2] }}</td>
+<td>{{ t[3] }}</td>
+<td>{{ t[4] }}</td>
+
 </tr>
 
 {% endfor %}

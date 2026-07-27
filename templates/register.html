@@ -2,34 +2,44 @@
 <html>
 <head>
     <title>Register Student</title>
+
     <link rel="stylesheet"
     href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <div class="container">
 
 <h1>👨‍🎓 Register Student</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Add a new student to the internship management system.
+</p>
 
 <form action="/save_student" method="POST">
 
-<input type="text"
+<input
+type="text"
 name="name"
-placeholder="Student Name"
+placeholder="👤 Student Name"
 required>
 
-<input type="email"
+<input
+type="email"
 name="email"
-placeholder="Email"
+placeholder="📧 Email Address"
 required>
 
-<input type="text"
+<input
+type="text"
 name="department"
-placeholder="Department"
+placeholder="🏫 Department"
 required>
 
 <button type="submit">
-Register Student
+✅ Register Student
 </button>
 
 </form>

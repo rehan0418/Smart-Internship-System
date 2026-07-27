@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Selfie Attendance</title>
+
+<title>Selfie Attendance</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-<h1>📷 Selfie Attendance</h1>
+<div class="container">
 
-<video id="video" width="400" height="300" autoplay></video>
+<h1>📷 Selfie Attendance</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:20px;">
+Capture a live selfie to mark attendance.
+</p>
+
+<video
+id="video"
+width="420"
+height="320"
+autoplay
+style="border-radius:15px;border:3px solid white;">
+</video>
 
 <br><br>
 
-<button type="button" onclick="capturePhoto()">
-Capture Photo
+<button
+type="button"
+onclick="capturePhoto()">
+
+📸 Capture Photo
+
 </button>
 
-<canvas id="canvas"
-width="400"
-height="300"
+<canvas
+id="canvas"
+width="420"
+height="320"
 style="display:none;">
 </canvas>
 
 <form method="POST">
 
-<br>
-
-<input type="text"
+<input
+type="text"
 name="student_name"
-placeholder="Student Name"
+placeholder="👨‍🎓 Student Name"
 required>
 
-<input type="hidden"
+<input
+type="hidden"
 id="photo"
 name="photo">
 
-<br><br>
-
 <button type="submit">
-Mark Attendance
+
+✅ Mark Attendance
+
 </button>
 
 </form>
 
+</div>
+
 <script>
 
-const video = document.getElementById("video");
+const video=document.getElementById("video");
 
-navigator.mediaDevices
-.getUserMedia({video:true})
+navigator.mediaDevices.getUserMedia({video:true})
+
 .then(function(stream){
-    video.srcObject = stream;
+
+video.srcObject=stream;
+
 });
 
 function capturePhoto(){
 
-    const canvas =
-    document.getElementById("canvas");
+const canvas=document.getElementById("canvas");
 
-    const context =
-    canvas.getContext("2d");
+const context=canvas.getContext("2d");
 
-    context.drawImage(
-        video,
-        0,
-        0,
-        400,
-        300
-    );
+context.drawImage(video,0,0,420,320);
 
-    const imageData =
-    canvas.toDataURL("image/png");
+document.getElementById("photo").value=
+canvas.toDataURL("image/png");
 
-    document.getElementById("photo").value =
-    imageData;
+alert("📷 Photo Captured Successfully");
 
-    alert("✅ Photo Captured Successfully");
 }
 
 </script>
 
 </body>
+
 </html>

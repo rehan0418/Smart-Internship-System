@@ -1,35 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>View Feedback</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+
+<title>Student Feedback</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
 <div class="container">
 
 <h1>💬 Student Feedback</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+View all feedback shared by mentors.
+</p>
 
 <table>
 
 <tr>
-<th>Student</th>
-<th>Feedback</th>
+
+<th>👨‍🎓 Student</th>
+
+<th>💬 Feedback</th>
+
 </tr>
 
 {% for f in feedbacks %}
 
 <tr>
-<td>{{ f[1] }}</td>
-<td>{{ f[2] }}</td>
+
+<td>
+
+<b>{{ f[1] }}</b>
+
+</td>
+
+<td style="text-align:left;">
+
+{{ f[2] }}
+
+</td>
+
 </tr>
 
 {% endfor %}
 
 </table>
 
+<br>
+
+<a href="/student_dashboard">
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
+</a>
+
 </div>
 
 </body>
+
 </html>

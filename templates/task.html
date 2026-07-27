@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Submit Task</title>
+
+<title>Daily Task</title>
 
 <link rel="stylesheet"
 href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
@@ -12,40 +14,43 @@ href="{{ url_for('static', filename='style.css') }}">
 <div class="container">
 
 <h1>📝 Daily Task Submission</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Submit today's internship work.
+</p>
 
 <form action="/save_task" method="POST">
 
-<input type="text"
+<input
+type="text"
 name="student_name"
-placeholder="Student Name"
+placeholder="👤 Student Name"
 required>
 
-<input type="text"
+<input
+type="text"
 name="task_title"
-placeholder="Task Title"
+placeholder="📋 Task Title"
 required>
 
 <textarea
 name="task_description"
 rows="5"
-style="width:100%;"
-placeholder="Task Description">
-</textarea>
+placeholder="📝 Task Description"></textarea>
 
-<select name="status" required>
+<select name="status">
 
-    <option value="Pending">⏳ Pending</option>
+<option value="Pending">⏳ Pending</option>
 
-    <option value="In Progress">🔄 In Progress</option>
+<option value="In Progress">🔄 In Progress</option>
 
-    <option value="Completed">✅ Completed</option>
+<option value="Completed">✅ Completed</option>
 
 </select>
 
-<br><br>
-
 <button type="submit">
-Submit Task
+🚀 Submit Task
 </button>
 
 </form>

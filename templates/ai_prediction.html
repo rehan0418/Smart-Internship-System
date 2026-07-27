@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>AI Prediction</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body class="ai-page">
+
+<div class="ai-box">
+
+<h1 class="ai-title">🤖 AI Performance Prediction</h1>
+
+<p class="ai-subtitle">
+Predict internship performance using Machine Learning
+</p>
+
+<form action="/predict" method="POST">
+
+<input
+type="number"
+name="attendance"
+placeholder="📍 Attendance (%)"
+required>
+
+<input
+type="number"
+name="tasks"
+placeholder="📋 Tasks Completed"
+required>
+
+<select name="rating">
+
+<option value="1">⭐ 1 Star</option>
+<option value="2">⭐⭐ 2 Stars</option>
+<option value="3">⭐⭐⭐ 3 Stars</option>
+<option value="4">⭐⭐⭐⭐ 4 Stars</option>
+<option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+
+</select>
+
+<button class="ai-btn">
+🤖 Predict Performance
+</button>
+
+</form>
+
+</div>
+
+</body>

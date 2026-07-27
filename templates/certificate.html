@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Certificate Status</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+<head>
+
+<title>Certificate Eligibility</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
@@ -12,37 +15,72 @@
 <div class="container">
 
 <h1>🏅 Certificate Eligibility</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Students who meet the internship requirements are eligible for the certificate.
+</p>
 
 <table>
 
 <tr>
-    <th>Name</th>
-    <th>Attendance</th>
-    <th>Rating</th>
-    <th>Status</th>
+
+<th>Student Name</th>
+
+<th>Attendance</th>
+
+<th>Rating</th>
+
+<th>Status</th>
+
 </tr>
 
 {% for s in students %}
 
 <tr>
-    <td>{{ s[1] }}</td>
-    <td>{{ s[4] }}</td>
-    <td>{{ s[5] }}</td>
 
-    <td>
-        {% if s[4] >= 75 %}
-            Eligible
-        {% else %}
-            Not Eligible
-        {% endif %}
-    </td>
+<td>{{ s[1] }}</td>
+
+<td>{{ s[4] }}%</td>
+
+<td>⭐ {{ s[5] }}</td>
+
+<td>
+
+{% if s[4] >= 75 %}
+
+<span style="color:lime;font-weight:bold;">
+✅ Eligible
+</span>
+
+{% else %}
+
+<span style="color:#ffb3b3;font-weight:bold;">
+❌ Not Eligible
+</span>
+
+{% endif %}
+
+</td>
+
 </tr>
 
 {% endfor %}
 
 </table>
 
+<br>
+
+<a href="/mentor_dashboard">
+
+<button>
+⬅ Back to Dashboard
+</button>
+
+</a>
+
 </div>
 
 </body>
+
 </html>

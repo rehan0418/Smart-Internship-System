@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Location Attendance</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+<head>
+
+<title>Location Attendance Records</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
@@ -12,29 +15,54 @@
 <div class="container">
 
 <h1>📍 Location Attendance Records</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Location records of all students.
+</p>
 
 <table>
 
 <tr>
-    <th>ID</th>
-    <th>Student Name</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Map Location</th>
+
+<th>ID</th>
+
+<th>Student</th>
+
+<th>Latitude</th>
+
+<th>Longitude</th>
+
+<th>Map</th>
+
 </tr>
+
 {% for a in attendance %}
 
 <tr>
-    <td>{{ a[0] }}</td>
-    <td>{{ a[1] }}</td>
-    <td>{{ a[2] }}</td>
-    <td>{{ a[3] }}</td>
 
-    <td>
-        <a href="https://www.google.com/maps?q={{ a[2] }},{{ a[3] }}" target="_blank">
-            View Map
-        </a>
-    </td>
+<td>{{ a[0] }}</td>
+
+<td>{{ a[1] }}</td>
+
+<td>{{ a[2] }}</td>
+
+<td>{{ a[3] }}</td>
+
+<td>
+
+<a href="https://www.google.com/maps?q={{ a[2] }},{{ a[3] }}" target="_blank">
+
+<button style="width:auto;padding:8px 15px;">
+
+🗺 View Map
+
+</button>
+
+</a>
+
+</td>
+
 </tr>
 
 {% endfor %}
@@ -44,10 +72,17 @@
 <br>
 
 <a href="/mentor_dashboard">
-    <button>⬅ Back to Dashboard</button>
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
 </a>
 
 </div>
 
 </body>
+
 </html>

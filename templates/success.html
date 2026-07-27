@@ -1,90 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Success</title>
 
-    <style>
+<title>Success</title>
 
-    body{
-        font-family:Arial,sans-serif;
-        background:linear-gradient(
-        135deg,
-        #4facfe,
-        #00f2fe
-        );
-
-        display:flex;
-        justify-content:center;
-        align-items:center;
-
-        height:100vh;
-    }
-
-    .success-box{
-
-        background:white;
-
-        padding:50px;
-
-        border-radius:20px;
-
-        text-align:center;
-
-        box-shadow:
-        0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    h1{
-        color:#28a745;
-        font-size:40px;
-    }
-
-    p{
-        font-size:20px;
-        color:#555;
-    }
-
-    button{
-
-        background:#0ea5e9;
-
-        color:white;
-
-        border:none;
-
-        padding:12px 25px;
-
-        border-radius:10px;
-
-        font-size:18px;
-
-        cursor:pointer;
-    }
-
-    button:hover{
-        background:#0284c7;
-    }
-
-    </style>
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
 
 </head>
+
 <body>
 
-<div class="success-box">
+<div class="container">
 
-    <h1>✅ Success</h1>
+<div style="text-align:center;">
 
-    <p>{{ message }}</p>
+<div style="font-size:90px;">
+🎉
+</div>
 
-    <br>
+<h1 style="color:#22c55e;">
+Success!
+</h1>
 
-    <a href="/student_dashboard">
-        <button>
-            🏠 Back to Dashboard
-        </button>
-    </a>
+<p style="font-size:22px;color:white;margin-top:20px;margin-bottom:35px;">
+
+{{ message }}
+
+</p>
+
+<div class="dashboard">
+
+<div class="card">
+
+<h2>✅ Operation Completed</h2>
+
+<p style="font-size:18px;">
+Your request has been processed successfully.
+</p>
+
+</div>
+
+</div>
+
+<br>
+
+<a href="/student_dashboard">
+
+<button>
+
+🏠 Student Dashboard
+
+</button>
+
+</a>
+
+<br><br>
+
+<a href="/mentor_dashboard">
+
+<button>
+
+👨‍🏫 Mentor Dashboard
+
+</button>
+
+</a>
+
+</div>
 
 </div>
 
 </body>
+
 </html>

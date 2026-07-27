@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Progress Tracker</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+
+<title>Progress Tracker</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>📈 Internship Progress Tracker</h1>
+<h1>📈 Internship Progress</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
 
-<table border="1" width="100%">
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Track internship performance.
+</p>
+
+<table>
 
 <tr>
-    <th>Name</th>
-    <th>Attendance</th>
-    <th>Rating</th>
-    <th>Progress</th>
+
+<th>Name</th>
+
+<th>Attendance</th>
+
+<th>Rating</th>
+
+<th>Overall Progress</th>
+
 </tr>
 
 {% for s in students %}
@@ -29,9 +43,13 @@
 
 <td>{{ s[1] }}%</td>
 
-<td>{{ s[2] }}/5</td>
+<td>⭐ {{ s[2] }}/5</td>
 
-<td>{{ ((s[1] + (s[2]*20))/2)|int }}%</td>
+<td>
+
+{{ ((s[1]+(s[2]*20))/2)|int }}%
+
+</td>
 
 </tr>
 
@@ -42,4 +60,5 @@
 </div>
 
 </body>
+
 </html>

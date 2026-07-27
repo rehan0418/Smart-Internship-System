@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Mentor Feedback</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+
+<title>Mentor Feedback</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
 <div class="container">
 
 <h1>💬 Mentor Feedback</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Provide constructive feedback to help students improve their internship performance.
+</p>
 
 <form action="/save_feedback" method="POST">
 
-<input type="text"
+<input
+type="text"
 name="student_name"
-placeholder="Student Name"
+placeholder="👨‍🎓 Student Name"
 required>
 
 <textarea
 name="feedback"
-rows="5"
-placeholder="Enter Feedback"
+rows="6"
+placeholder="📝 Write your feedback here..."
 required></textarea>
 
-<br><br>
-
 <button type="submit">
-Save Feedback
+
+💾 Save Feedback
+
 </button>
 
 </form>
 
+<br>
+
+<a href="/mentor_dashboard">
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
+</a>
+
 </div>
 
 </body>
+
 </html>

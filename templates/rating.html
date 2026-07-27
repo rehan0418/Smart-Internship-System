@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Update Rating</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+<title>Rating</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>⭐ Update Student Rating</h1>
+<h1>⭐ Student Performance Rating</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Give rating based on student performance.
+</p>
 
 <form action="/save_rating" method="POST">
 
-<input type="text"
+<input
+type="text"
 name="student_name"
-placeholder="Student Name"
+placeholder="👤 Student Name"
 required>
 
 <select name="rating">
 
-<option value="1">1 Star</option>
-<option value="2">2 Star</option>
-<option value="3">3 Star</option>
-<option value="4">4 Star</option>
-<option value="5">5 Star</option>
+<option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+
+<option value="4">⭐⭐⭐⭐ Very Good</option>
+
+<option value="3">⭐⭐⭐ Good</option>
+
+<option value="2">⭐⭐ Average</option>
+
+<option value="1">⭐ Poor</option>
 
 </select>
 
-<br><br>
-
 <button type="submit">
-Update Rating
+
+⭐ Update Rating
+
 </button>
 
 </form>

@@ -1,79 +1,134 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
     <title>Student Dashboard</title>
 
-
-<link rel="stylesheet"
-href="{{ url_for('static', filename='style.css') }}">
-
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
 <body>
 
 <div class="container">
-     <div class="logout-container">
-        <a href="/logout">
-            <button class="logout-btn">🚪 Logout</button>
-        </a>
-    </div>
 
+<div class="logout-container">
 
-<h1>🎓 Student Dashboard</h1>
-
-<div class="dashboard">
-
-    <a href="/task">
-        <button>📝 Submit Daily Task</button>
-    </a>
-
-    <a href="/tasks">
-        <button>📋 View My Tasks</button>
-    </a>
-
-    <a href="/view_attendance">
-        <button>📍 View Attendance</button>
-    </a>
-
-    <a href="/view_rating">
-        <button>⭐ View Rating</button>
-    </a>
-
-    <a href="/certificate">
-        <button>🏅 Certificate Status</button>
-    </a>
-
-    <a href="/progress">
-        <button>📈 Progress Tracker</button>
-    </a>
-
-    <a href="/view_feedback">
-        <button>💬 View Feedback</button>
-    </a>
-
-    <a href="/certificate_form">
-    <button>📜 Download Certificate</button>
-    </a>
-
-    <a href="/analytics">
-        <button>📊 Analytics Dashboard</button>
-    </a>
-
-    <a href="/upload">
-        <button>📁 Upload Report</button>
-    </a>
-
-    <a href="/location_attendance">
-        <button>📍 Location Attendance</button>
-    </a>
-
-    <a href="/camera_attendance">
-        <button>📷 Selfie Attendance</button>
-    
+<a href="/logout">
+<button class="logout-btn">🚪 Logout</button>
+</a>
 
 </div>
 
+<h1>🎓 Student Dashboard</h1>
+
+<h2 style="text-align:center;color:white;">
+Welcome Student 👋
+</h2>
+
+<br>
+
+<div class="dashboard">
+
+<div class="card">
+<h2>📝</h2>
+<h3>Submit Daily Task</h3>
+<a href="/task">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📋</h2>
+<h3>View My Tasks</h3>
+<a href="/tasks">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📍</h2>
+<h3>Attendance</h3>
+<a href="/view_attendance">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>⭐</h2>
+<h3>View Rating</h3>
+<a href="/view_rating">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>🏅</h2>
+<h3>Certificate Status</h3>
+<a href="/certificate">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📈</h2>
+<h3>Progress Tracker</h3>
+<a href="/progress">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>💬</h2>
+<h3>View Feedback</h3>
+<a href="/view_feedback">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📜</h2>
+<h3>Download Certificate</h3>
+<a href="/certificate_form">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📊</h2>
+<h3>Analytics Dashboard</h3>
+<a href="/analytics">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📁</h2>
+<h3>Upload Report</h3>
+<a href="/upload">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📍</h2>
+<h3>Location Attendance</h3>
+<a href="/location_attendance">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📷</h2>
+<h3>Selfie Attendance</h3>
+<a href="/camera_attendance">
+<button>Open</button>
+</a>
+</div>
+
+</div>
 
 </div>
 

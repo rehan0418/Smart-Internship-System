@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Analytics Dashboard</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+<title>Analytics Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1 class="analytics-title">
-    📈 Analytics Dashboard
-</h1>
+<h1>📊 Analytics Dashboard</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
 
-    <div class="analytics-grid">
+<p style="text-align:center;color:white;margin-bottom:30px;">
+Real-Time Internship Performance Overview
+</p>
 
-        <div class="analytics-card">
-            <h3>👨‍🎓 Students</h3>
-            <p>{{ students }}</p>
-        </div>
+<div class="analytics-grid">
 
-        <div class="analytics-card">
-            <h3>📋 Tasks</h3>
-            <p>{{ tasks }}</p>
-        </div>
-
-        <div class="analytics-card">
-            <h3>📍 Attendance</h3>
-            <p>{{ attendance }}</p>
-        </div>
-
-        <div class="analytics-card">
-            <h3>⭐ Avg Rating</h3>
-            <p>{{ rating }}</p>
-        </div>
-
-        <div class="analytics-card top-card">
-    <h3>🏆 Top Performer</h3>
-    <p>{{ top_student }}</p>
-    <small>Best Performing Intern</small>
+<div class="analytics-card">
+<h3>👨‍🎓 Total Students</h3>
+<p>{{ students }}</p>
 </div>
 
-    </div>
+<div class="analytics-card">
+<h3>📝 Total Tasks</h3>
+<p>{{ tasks }}</p>
+</div>
+
+<div class="analytics-card">
+<h3>📍 Attendance %</h3>
+<p>{{ attendance }}%</p>
+</div>
+
+<div class="analytics-card">
+<h3>⭐ Average Rating</h3>
+<p>{{ rating }}/5</p>
+</div>
+
+<div class="analytics-card top-card">
+
+<h3>🏆 Top Performer</h3>
+
+<p>{{ top_student }}</p>
+
+<small>
+Best Performing Intern
+</small>
+
+</div>
+
+</div>
 
 </div>
 

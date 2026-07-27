@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>AI Prediction</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body class="ai-page">
+
+<div class="result-box">
+
+<h1>🤖 AI Prediction Result</h1>
+
+<div class="prediction">
+{{ result }}
+</div>
+
+<div class="result-info">
+
+<p>📍 Attendance : <b>{{ attendance }}%</b></p>
+
+<p>📋 Tasks Completed : <b>{{ tasks }}</b></p>
+
+<p>⭐ Rating : <b>{{ rating }}/5</b></p>
+
+</div>
+
+<a href="/mentor_dashboard">
+
+<button class="back-btn">
+⬅ Back to Dashboard
+</button>
+
+</a>
+
+</div>
+
+</body>

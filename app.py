@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, session
+from ml_model import predict_performance
 import sqlite3
 import os
 import base64
@@ -809,6 +810,29 @@ def mentor_tasks():
     return render_template(
         "mentor_tasks.html",
         tasks=tasks
+    )
+@app.route("/ai_prediction")
+def ai_prediction():
+    return render_template("ai_prediction.html")
+@app.route("/predict",methods=["POST"])
+def predict():
+
+    attendance = int(request.form["attendance"])
+    tasks = int(request.form["tasks"])
+    rating = int(request.form["rating"])
+
+    result = predict_performance(
+        attendance,
+        tasks,
+        rating
+    )
+
+    return render_template(
+        "prediction_result.html",
+        result=result,
+        attendance=attendance,
+        tasks=tasks,
+        rating=rating
     )
 # -----------------------
 # Run App

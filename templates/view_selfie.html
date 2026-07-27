@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Selfie Attendance</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+<head>
+
+<title>Selfie Attendance Records</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1>📷 Selfie Attendance Records</h1>
+<h1>📷 Selfie Attendance Records</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
 
-    <div class="dashboard">
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Captured selfies submitted by students.
+</p>
 
-        {% for s in data %}
+<div class="dashboard">
 
-        <div class="card">
+{% for s in data %}
 
-            <h3>👨‍🎓 {{ s[0] }}</h3>
+<div class="card">
 
-            <p>📅 {{ s[2] }}</p>
+<img
+src="{{ url_for('static', filename='selfies/' + s[1]) }}"
+width="180"
+height="180"
+style="border-radius:15px;margin-bottom:15px;">
 
-            <img src="{{ url_for('static',
-            filename='selfies/' + s[1]) }}"
-            width="150">
-        </div>
+<h3>{{ s[0] }}</h3>
 
-        {% endfor %}
+<p>{{ s[2] }}</p>
 
-    </div>
+</div>
+
+{% endfor %}
+
+</div>
+
+<br>
+
+<a href="/mentor_dashboard">
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
+</a>
 
 </div>
 
 </body>
+
 </html>

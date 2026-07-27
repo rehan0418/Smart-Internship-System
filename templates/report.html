@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Student Report</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+
+<title>Student Report</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>📊 Student Report</h1>
+<h1>📄 Internship Report</h1>
+<hr style="margin:20px 0;border:1px solid rgba(255,255,255,0.2);">
+
+<p style="text-align:center;color:white;margin-bottom:25px;">
+Complete performance report of students.
+</p>
 
 <table>
 
 <tr>
+
 <th>Name</th>
+
 <th>Department</th>
+
 <th>Attendance</th>
+
 <th>Tasks</th>
+
 <th>Rating</th>
-<th>Certificate Status</th>
+
+<th>Status</th>
+
 </tr>
 
 {% for s in students %}
@@ -28,17 +44,29 @@
 <tr>
 
 <td>{{ s[1] }}</td>
+
 <td>{{ s[3] }}</td>
-<td>{{ s[4] }}</td>
+
+<td>{{ s[4] }}%</td>
+
 <td>{{ s[5] }}</td>
-<td>{{ s[6] }}</td>
+
+<td>⭐ {{ s[6] }}</td>
 
 <td>
 
-{% if s[4] >= 75 and s[6] >= 3 %}
-Eligible
+{% if s[4] >=75 and s[6]>=3 %}
+
+<span style="color:lime;font-weight:bold;">
+✅ Eligible
+</span>
+
 {% else %}
-Not Eligible
+
+<span style="color:#ffb3b3;font-weight:bold;">
+❌ Not Eligible
+</span>
+
 {% endif %}
 
 </td>
@@ -52,4 +80,5 @@ Not Eligible
 </div>
 
 </body>
+
 </html>

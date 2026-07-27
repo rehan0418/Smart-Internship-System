@@ -1,88 +1,157 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
+
     <title>Mentor Dashboard</title>
 
-
-<link rel="stylesheet"
-href="{{ url_for('static', filename='style.css') }}">
-
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
 <body>
 
 <div class="container">
-     <div class="logout-container">
-        <a href="/logout">
-            <button class="logout-btn">🚪 Logout</button>
-        </a>
-    </div>
 
+<div class="logout-container">
+
+<a href="/logout">
+<button class="logout-btn">🚪 Logout</button>
+</a>
+
+</div>
 
 <h1>👨‍🏫 Mentor Dashboard</h1>
 
+<h2 style="text-align:center;color:white;">
+Welcome Mentor 👋
+</h2>
+
+<br>
+
 <div class="dashboard">
 
-    <a href="/register">
-        <button>👨‍🎓 Register Student</button>
-    </a>
-
-    <a href="/students">
-        <button>📋 View All Students</button>
-    </a>
-
-    <a href="/attendance">
-        <button>📍 Update Attendance</button>
-    </a>
-
-    <a href="/rating">
-        <button>⭐ Update Rating</button>
-    </a>
-
-    <a href="/mentor_tasks">
-        <button>✅ Approve Tasks</button>
-    </a>
-
-    <a href="/feedback">
-        <button>💬 Give Feedback</button>
-    </a>
-
-    <a href="/ranking">
-        <button>🏆 Student Ranking</button>
-    </a>
-
-    <a href="/analytics">
-        <button>📊 Analytics Dashboard</button>
-    </a>
-
-    <a href="/view_location_attendance">
-        <button>📍 View Location Attendance</button>
-    </a>
-
-    <a href="/view_selfie_attendance">
-        <button>📷 View Selfie Attendance</button>
-    </a>
-
-    <a href="/view_uploaded_reports">
-        <button>📁 Uploaded Reports</button>
-    </a>
-
-    <a href="/report">
-        <button>📄 Generate Reports</button>
-    </a>
-
-    <a href="/certificate">
-        <button>🏅 Certificate Eligibility</button>
-    </a>
-
-    <a href="/certificate_form">
-        <button>📜 Generate Certificate</button>
-    </a>
-   
+<div class="card">
+<h2>👨‍🎓</h2>
+<h3>Register Student</h3>
+<a href="/register">
+<button>Open</button>
+</a>
 </div>
 
+<div class="card">
+<h2>📋</h2>
+<h3>View Students</h3>
+<a href="/students">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📍</h2>
+<h3>Attendance</h3>
+<a href="/attendance">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>⭐</h2>
+<h3>Update Rating</h3>
+<a href="/rating">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>✅</h2>
+<h3>Approve Tasks</h3>
+<a href="/mentor_tasks">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>💬</h2>
+<h3>Feedback</h3>
+<a href="/feedback">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>🏆</h2>
+<h3>Ranking</h3>
+<a href="/ranking">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📊</h2>
+<h3>Analytics</h3>
+<a href="/analytics">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📍</h2>
+<h3>Location Attendance</h3>
+<a href="/view_location_attendance">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📷</h2>
+<h3>Selfie Attendance</h3>
+<a href="/view_selfie_attendance">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📁</h2>
+<h3>Uploaded Reports</h3>
+<a href="/view_uploaded_reports">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📄</h2>
+<h3>Generate Report</h3>
+<a href="/report">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>🏅</h2>
+<h3>Certificate Status</h3>
+<a href="/certificate">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📜</h2>
+<h3>Generate Certificate</h3>
+<a href="/certificate_form">
+<button>Open</button>
+</a>
+</div>
+
+<div class="card">
+    <h2>🧠</h2>
+    <h3>AI Performance Prediction</h3>
+    <a href="/ai_prediction">
+        <button>Open</button>
+    </a>
+</div>
+</div>
 
 </div>
 
